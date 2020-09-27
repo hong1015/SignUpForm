@@ -153,7 +153,10 @@ input {
   display: block;
   margin: 18px 0;
   text-align: right;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: all 0.5s ease-in-out 0s; }
+  .log_in .forgot_password:hover {
+    color: #fff; }
 
 .password-wrapper {
   display: flex;
