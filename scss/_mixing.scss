@@ -1,0 +1,39 @@
+@import "_variables";
+
+@mixin minMQ($min) {
+  @media (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin minMaxMQ($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin maxMQ($max) {
+  @media (max-width: $max) {
+    @content;
+  }
+}
+@mixin dropShadow(
+  $offsetH: 0px,
+  $offsetV: 0px,
+  $bulr: 33px,
+  $spread: 0px,
+  $color: rgba($black, 0.8)
+) {
+  -webkit-box-shadow: $offsetH $offsetV $bulr $spread $color;
+  -moz-box-shadow: $offsetH $offsetV $bulr $spread $color;
+  box-shadow: $offsetH $offsetV $bulr $spread $color;
+}
+
+@mixin transitionOp(
+  $target: all,
+  $speed: 0.5s,
+  $type: ease-in-out,
+  $delay: 0s
+) {
+  transition: $target $speed $type $delay;
+}

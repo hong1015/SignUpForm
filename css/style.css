@@ -1,0 +1,194 @@
+body {
+  background: #c1bdba;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px; }
+
+button {
+  cursor: pointer; }
+  button:focus {
+    border-radius: none;
+    outline: none; }
+
+.form-container {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 550px;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.form-panel {
+  background: #24323d;
+  border-radius: 6px;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.71);
+  box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.71);
+  color: #fff;
+  margin: auto;
+  max-width: 600px;
+  overflow: hidden;
+  padding: 40px;
+  width: 100%; }
+  @media (max-width: 350px) {
+    .form-panel {
+      padding: 40px 2.9%; } }
+
+.form-body {
+  height: 396px;
+  position: relative; }
+  @media (max-width: 509px) {
+    .form-body {
+      height: 472px; } }
+  .form-body > div {
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease-in-out 0s;
+    top: 0;
+    visibility: hidden;
+    width: 100%; }
+    .form-body > div.active-body {
+      opacity: 1;
+      visibility: visible; }
+    .form-body > div h2 {
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin: 30px 0;
+      text-align: center; }
+
+.button-wrapper {
+  align-items: center;
+  background: #24323d;
+  display: flex;
+  justify-content: center; }
+  .button-wrapper button {
+    background: #43525a;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 53px;
+    max-width: 260px;
+    transition: all 0.5s ease-in-out 0s;
+    width: 100%; }
+    .button-wrapper button.active {
+      background: #1ab188;
+      color: #fff; }
+
+input {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  height: 34px;
+  padding-left: 10px;
+  width: 100%; }
+  input:focus {
+    border-radius: none;
+    outline: none; }
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 38px 0;
+  position: relative; }
+  .form-row label {
+    display: flex;
+    width: 100%; }
+  .form-row.col-two label {
+    width: 47%; }
+  .form-row.col-two input {
+    width: 100%; }
+  @media (max-width: 509px) {
+    .form-row.col-two {
+      flex-flow: row wrap; }
+      .form-row.col-two label {
+        display: flex;
+        width: 100%; }
+        .form-row.col-two label:first-child {
+          margin-bottom: 38px; } }
+  .form-row input.error {
+    outline: 1px solid #d10b0d; }
+    .form-row input.error + .password_rule {
+      opacity: 1;
+      visibility: visible; }
+  .form-row input:valid:after, .form-row input:focus:after {
+    display: none; }
+
+.password_rule {
+  color: #d10b0d;
+  font-size: 12px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 42px;
+  visibility: hidden;
+  width: 100%; }
+
+.btn-submit {
+  background: #1ab188;
+  border: none;
+  color: #fff;
+  letter-spacing: 4px;
+  line-height: 66px;
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 100%; }
+
+.log_in .form-row:nth-child(2) {
+  margin-bottom: 0; }
+
+.log_in .forgot_password {
+  color: #1ab188;
+  display: block;
+  margin: 18px 0;
+  text-align: right;
+  text-decoration: none; }
+
+.password-wrapper {
+  display: flex;
+  width: 100%; }
+  .password-wrapper i:before {
+    font-size: 16px;
+    opacity: 0.3;
+    position: absolute;
+    right: 14px;
+    top: 10px; }
+  .password-wrapper input {
+    padding-right: 32px;
+    width: 100%; }
+  .password-wrapper.lock-open i:before {
+    content: "\f13e"; }
+
+.first_name-warpper {
+  position: relative; }
+  .first_name-warpper:before {
+    content: "\f090";
+    font-family: FontAwesome;
+    font-size: 16px;
+    opacity: 0.3;
+    position: absolute;
+    right: 14px;
+    top: 10px; }
+  .first_name-warpper input {
+    padding-right: 32px; }
+
+.asterisk-active {
+  position: relative; }
+  .asterisk-active:after {
+    color: rgba(26, 177, 136, 0.5);
+    content: "*";
+    left: 95px;
+    page-break-after: always;
+    position: absolute;
+    top: 9px;
+    transform: rotate(30deg); }
+
+#emailLabel:after, #emailAddressLoginLabel:after {
+  left: 118px; }
+
+#signUpPassword:after {
+  left: 126px; }
+
+#logInPassword:after {
+  left: 85px; }

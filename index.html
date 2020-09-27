@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Form" />
+    <title>sign up / login form</title>
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="form-container">
+      <div class="form-panel">
+        <div class="button-wrapper">
+          <button id="signUpBtn" onclick="switchForm('signUp');" class="active">
+            Sign up
+          </button>
+          <button id="logInBtn" onclick="switchForm('logIn');">Log in</button>
+        </div>
+        <div class="form-body">
+          <div id="signUp" class="sign_up active-body">
+            <h2>Sign Up for Free</h2>
+            <form
+              id="signUpForm"
+              name="signUpForm"
+              onsubmit='submitForm("signUpForm", event);'
+            >
+              <div class="form-row col-two">
+                <label
+                  id="firstNameLabel"
+                  class="first_name-warpper asterisk-active"
+                >
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    placeholder="First Name"
+                    onchange="validationCheck('firstName');"
+                    onkeypress="removeAsterisk('firstNameLabel')"
+                    onkeyup="activeAsterisk('firstName', 'firstNameLabel')"
+                  />
+                </label>
+                <label id="lastNameLabel" class="asterisk-active">
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    placeholder="Last Name"
+                    onchange="validationCheck('lastName')"
+                    onkeypress="removeAsterisk('lastNameLabel')"
+                    onkeyup="activeAsterisk('lastName', 'lastNameLabel')"
+                  />
+                </label>
+              </div>
+
+              <div class="form-row">
+                <label id="emailLabel" class="asterisk-active">
+                  <input
+                    type="email"
+                    id="emailAddress"
+                    name="emailAddress"
+                    required
+                    placeholder="Email Address"
+                    onchange="validationCheck('emailAddress')"
+                    onkeypress="removeAsterisk('emailLabel')"
+                    onkeyup="activeAsterisk('emailAddress', 'emailLabel')"
+                  />
+                </label>
+              </div>
+              <div class="form-row">
+                <label
+                  id="signUpPassword"
+                  class="password-wrapper asterisk-active"
+                >
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    placeholder="Set A Password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                    onchange="validationCheck('password')"
+                    onkeypress="removeAsterisk('signUpPassword')"
+                    onkeyup="activeAsterisk('password', 'signUpPassword')"
+                  />
+                  <i
+                    class="fa fa-lock"
+                    aria-hidden="true"
+                    onclick="showPassword('password', 'signUpPassword')"
+                  ></i>
+                  <div class="password_rule">
+                    Password must be at least 6 characters, contain at least 1
+                    uppercase, lowercase and number
+                  </div>
+                </label>
+              </div>
+
+              <input hidden type="text" name="robot" />
+              <button
+                onclick='formValidationCheck("signUpForm")'
+                class="btn-submit"
+              >
+                Get started
+              </button>
+            </form>
+          </div>
+          <div id="logIn" class="log_in">
+            <h2>Welcome Back!</h2>
+            <form
+              id="logInForm"
+              name="logInForm"
+              onsubmit='submitForm("logInForm", event);'
+            >
+              <div class="form-row">
+                <label id="emailAddressLoginLabel" class="asterisk-active">
+                  <input
+                    type="email"
+                    id="emailAddressLogin"
+                    name="emailAddressLogin"
+                    required
+                    placeholder="Email Address"
+                    onchange="validationCheck('emailAddressLogin')"
+                    onkeypress="removeAsterisk('emailAddressLoginLabel')"
+                    onkeyup="activeAsterisk('emailAddressLogin', 'emailAddressLoginLabel')"
+                  />
+                </label>
+              </div>
+              <div class="form-row">
+                <label id="logInPassword" class="password-wrapper asterisk-active">
+                  <input
+                    type="password"
+                    id="passwordLogin"
+                    name="passwordLogin"
+                    required
+                    placeholder="Password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                    onchange="validationCheck('passwordLogin')"
+                    onkeypress="removeAsterisk('logInPassword')"
+                    onkeyup="activeAsterisk('passwordLogin', 'logInPassword')"
+                  />
+                  <i
+                    class="fa fa-lock"
+                    aria-hidden="true"
+                    onclick="showPassword('passwordLogin', 'logInPassword')"
+                  ></i>
+                </label>
+              </div>
+              <a href="/" class="forgot_password">Forgot password?</a>
+              <button
+                onclick='formValidationCheck("logInForm")'
+                class="btn-submit"
+              >
+                Log in
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="enum/switchFormEnum.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
