@@ -7,9 +7,14 @@ body {
 }
 button {
   cursor: pointer;
-  &:focus {
+  @include transitionOp();
+    &:focus {
     border-radius: none;
     outline: none;
+  }
+  &:hover{
+    background: $white;
+    color: $buttonActive;
   }
 }
 
@@ -77,8 +82,11 @@ button {
     color: rgba($white, 0.6);
     line-height: 53px;
     max-width: 260px;
-    @include transitionOp();
     width: 100%;
+    &:hover{
+      background: $white;
+      color: $buttonActive;
+    }
     &.active {
       background: $buttonActive;
       color: $white;
@@ -96,6 +104,14 @@ input {
   &:focus {
     border-radius: none;
     outline: none;
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    caret-color: white;
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: #fff !important;
   }
 }
 
@@ -164,6 +180,7 @@ input {
   font-weight: 700;
   text-transform: uppercase;
   width: 100%;
+
 }
 
 .log_in {
